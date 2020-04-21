@@ -4,10 +4,9 @@
  */
 
 // 引入 CSS 样式
-require('./../less/index.less')
+require('../less/layout.less'); // 布局样式
 
 // 引入 JS
-require('./test.js');                
-
+require('./test.js');
 
 

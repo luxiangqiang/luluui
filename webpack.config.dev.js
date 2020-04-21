@@ -8,11 +8,12 @@ module.exports = {
     path: __dirname + "/dist/dev",
     filename: "xiaolu.min.js"
   },
+  module: config.module,
   plugins: config.plugins,
   devServer: {
     host: "127.0.0.1",
     open:true,
-    port:9000,
+    port:8000,
     contentBase: "./dist"
   }
 }
