@@ -1,14 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>小鹿UI测试页面</title>
+  <style>
+    .row {
+      margin-bottom: 10px
+    }
+
+    .row div {
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      color: #fff
+    }
+
+    .row div:first-child {
+      background: #f1c40f;
+    }
+
+    .row div:nth-child(2) {
+      background: #f39c12;
+    }
+
+    .row div:last-child {
+      background: #e67e22;
+    }
+  </style>
 </head>
+
 <body>
+  <!-- <fieldset class="msunui-fieldset" id="layout">
+    <legend>布局</legend>
+  </fieldset>
+  <blockquote class="msunui-quote">
+      栅格系统
+  </blockquote> -->
+
   <div class="container">
-    dsds 
+    <h1>栅格布局</h1>
+    <div class="row">
+      <div class="col-lg-4 col-md-1">col-lg-4 col-md-1</div>
+      <div class="col-lg-4 col-md-3">col-lg-4 col-md-3</div>
+      <div class="col-lg-4 col-md-8">col-lg-4 col-md-8</div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2">col-lg-2</div>
+      <div class="col-lg-2 col-lg-offset-2">col-lg-2 col-lg-offset-2</div>
+      <div class="col-lg-2 col-lg-offset-2">col-lg-2 col-lg-offset-2</div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="col-lg-4">col-lg-4(内部)</div>
+        <div class="col-lg-8">col-lg-8(内部)</div>
+        <div class="col-lg-12">col-lg-12(内部)</div>
+      </div>
+    </div>
   </div>
 </body>
+
 </html>

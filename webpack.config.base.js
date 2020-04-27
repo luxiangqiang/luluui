@@ -64,7 +64,7 @@ module.exports = {
       cleanAfterEveryBuildPatterns: ["dist"]
     }),
     new MiniCssExtractPlugin({
-      filename: "./css/xiaolu.min.css"   // 抽离出来文件名称
+      filename: "./css/xiaolu.min.css" // 抽离出来文件名称
     })
   ]
 };

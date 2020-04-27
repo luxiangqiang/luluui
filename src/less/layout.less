@@ -1,9 +1,64 @@
 @import "./common.less";
 
-.container{
+// 两边留出空白
+.container {
   padding: 20px;
   .box();
 }
 
+// 横向铺满
+.container-fuild {
+  width: 100%;
+}
 
+// 行
+.row {
+  display: block;
+  // 清除浮动
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
 
+// 栅格循环函数
+.loop (@class,@class-offset,@count) when (@count > 0) {
+  .loop(@class, @class-offset, @count - 1);
+  .@{class}@{count} {
+    width: percentage(@count / @grid-length);
+    float: left;
+    .box();
+  }
+  .@{class-offset}@{count} {
+    margin-left: percentage(@count / @grid-length);
+  }
+}
+
+// 超小屏幕(xs)
+@media screen and (min-width: 768px) {
+  @classStr: col-xs-;
+  @class-offset: col-xs-offset-;
+  .loop(@classStr, @class-offset, @grid-length);
+}
+
+// 小屏幕(sm)
+@media screen and (min-width: 768px) and (max-width: 991px){
+  @classStr: col-sm-;
+  @class-offset: col-sm-offset-;
+  .loop(@classStr, @class-offset, @grid-length);
+}
+
+// 中等屏幕(md)
+@media screen and (min-width: 992px) and (max-width: 1199px){
+  @classStr: col-md-;
+  @class-offset: col-md-offset-;
+  .loop(@classStr, @class-offset, @grid-length);
+}
+
+// 超大屏幕(lg)
+@media screen and (min-width: 1200px) {
+  @classStr: col-lg-;
+  @class-offset: col-lg-offset-;
+  .loop(@classStr, @class-offset, @grid-length);
+}
