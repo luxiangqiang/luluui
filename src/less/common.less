@@ -1,22 +1,67 @@
 /* 背景色 */
-@background-color:#f2f2f2;
+@background-color: #f1e9e9;
+
+/* 边框颜色 */
+@theme-color: #f96e57;
 
 /* 栅格列数 */
-@grid-length:12;
+@grid-length: 12;
 
 /* 默认字体样式 */
-@font-family:Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-serif;
+@font-family: Helvetica Neue, Helvetica, PingFang SC, Tahoma, Arial, sans-serif;
 
 /* 盒子模型 */
-.box(@box-sizing:border-box){
+.box(@box-sizing:border-box) {
   -webkit-box-sizing: @box-sizing;
   -moz-box-sizing: @box-sizing;
-  box-sizing: @box-sizing
+  box-sizing: @box-sizing;
 }
 
-body{
+/* 边框样式 */
+.border(@border-direction,@border:1px solid #e6e6e6)
+  when
+  (@border-direction = all) {
+  border: @border;
+}
+
+.border(@border-direction,@border:1px solid #e6e6e6)
+  when
+  (@border-direction = left) {
+  border-left: @border;
+}
+.border(@border-direction,@border:1px solid #e6e6e6)
+  when
+  (@border-direction = rigth) {
+  border-rigth: @border;
+}
+.border(@border-direction,@border:1px solid #e6e6e6)
+  when
+  (@border-direction = top) {
+  border-top: @border;
+}
+.border(@border-direction,@border:1px solid #e6e6e6)
+  when
+  (@border-direction = bottom) {
+  border-bottom: @border;
+}
+
+// 文字垂直居中
+.text-vertical-align(@height){
+  height: @height;
+  line-height: @height;
+}
+
+body {
   font-family: @font-family;
   font-size: 14px;
   color: #333333;
   // background: #333333
+}
+
+
+
+/* 公共样式 */
+*{
+  margin: 0;
+  padding:0;
 }
