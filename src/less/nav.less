@@ -1,0 +1,54 @@
+@import "./common.less";
+
+/* 水平导航栏样式 */
+.nav{
+  position: relative;
+  height: @nav-height;
+  background:@nav-color;
+  padding: 0 15px;
+
+  .nav-item{
+    position: relative;
+    display: inline-block;
+    list-style-type: none;
+    font-size: 15px;
+    text-align: center;
+    .text-vertical-align(@nav-height);
+
+    .nav-text{
+      padding: 0 15px;
+      color: #ffffff;
+      
+      // nav 箭头更多
+      .nav-more{ 
+        vertical-align: middle;
+        margin-left: 2px;
+        .trangle(#ffffff, bottom)
+      }
+
+      // nav 箭头移出
+      .nav-move{
+        vertical-align: middle;
+        margin-bottom: 3px;
+        margin-left: 2px;
+        .trangle(#ffffff, top)
+      }
+    }
+
+    .nav-child{
+      position: absolute;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+
+      .nav-child-item{
+        &:hover{
+          background: #f2f2f2;
+        }
+        .nav-text{
+          padding: 0 15px;
+          color: #000;
+          .text-vertical-align(40px);
+        }
+      }
+    }
+  }
+}

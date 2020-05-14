@@ -10,11 +10,23 @@
 /* 默认字体样式 */
 @font-family: Helvetica Neue, Helvetica, PingFang SC, Tahoma, Arial, sans-serif;
 
+/* 导航默认高度 */
+@nav-height: 50px;
+
+/* 导航颜色 */
+@nav-color: #2f4056;
+
+
 /* 盒子模型 */
 .box(@box-sizing:border-box) {
   -webkit-box-sizing: @box-sizing;
   -moz-box-sizing: @box-sizing;
   box-sizing: @box-sizing;
+}
+
+/* 盒子阴影 */
+.boxshow(@showSize){
+  box-shadow: 0 2px 4px rgba(0,0,0,.12);
 }
 
 /* 边框样式 */
@@ -45,23 +57,62 @@
   border-bottom: @border;
 }
 
-// 文字垂直居中
+/* 文字垂直居中 */
 .text-vertical-align(@height){
   height: @height;
   line-height: @height;
+}
+
+/* 三角形 */
+.trangle(@color,@direction) when (@direction = top){
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-bottom: 6px solid @color;
+  border-left: 6px transparent solid;
+  border-right: 6px transparent solid;
+}
+.trangle(@color,@direction) when (@direction = bottom){
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 6px solid @color;
+  border-left: 6px transparent solid;
+  border-right: 6px transparent solid;
+}
+.trangle(@color,@direction) when (@direction = left){
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-right: 6px solid @color;
+  border-top: 6px transparent solid;
+  border-bottom: 6px transparent solid;
+}
+.trangle(@color,@direction) when (@direction = right){
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 6px solid @color;
+  border-top: 6px transparent solid;
+  border-bottom: 6px transparent solid;
+}
+
+/* 公共样式 */
+*{
+  margin: 0;
+  padding:0;
 }
 
 body {
   font-family: @font-family;
   font-size: 14px;
   color: #333333;
-  // background: #333333
 }
 
+a{
+  text-decoration: none;
+}
 
-
-/* 公共样式 */
-*{
-  margin: 0;
-  padding:0;
+ul li{
+  list-style-type: none;
 }
